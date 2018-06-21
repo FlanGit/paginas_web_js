@@ -1,0 +1,20 @@
+{
+  "name": "paginas_web_js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlanGit/paginas_web_js.git"
+  },
+  "keywords": ["Javascript", "ECMAScript"],
+  "author": "Francisco Frias",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FlanGit/paginas_web_js/issues"
+  },
+  "homepage": "https://github.com/FlanGit/paginas_web_js#readme"
+}
