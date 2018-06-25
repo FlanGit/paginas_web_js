@@ -10,9 +10,8 @@
     console.log(SALUDO, pUser)
     // variable local a la función
     let autor = 'Alberto'
-     console.log('Dentro', autor)
+    console.log('Dentro', autor)
 }
-
 
 function sumar(a,b) {
     let resultado = a + b
