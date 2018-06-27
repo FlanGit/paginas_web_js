@@ -5,13 +5,14 @@
  // variable global -> hiting
  // let autor = 'Alejandro'
 
- function saludar(pUser) {
+function saludar(pUser) {
     const SALUDO = 'Hola'
     console.log(SALUDO, pUser)
     // variable local a la función
     let autor = 'Alberto'
-    console.log('Dentro', autor)
+     console.log('Dentro', autor)
 }
+
 
 function sumar(a,b) {
     let resultado = a + b
@@ -34,3 +35,5 @@ saludar('Elena')
 sumar(2,4)
 dividir(4,2)
 dividir(4,0)
+
+
