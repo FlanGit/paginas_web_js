@@ -2,6 +2,11 @@
 var saludo
 /** Inicializacion */
 saludo = 'Hola'
+
+/** Declaracion + Inicializacion */
+var user = 'Mundo'
+
+
 /*
 Tipos de datos
 - string
@@ -11,8 +16,7 @@ Tipos de datos
 - undefined
 */
 
-/** Declaracion + Inicializacion */
-var user = 'Mundo'
+
 
 /** Tipos de Datos */
 var nombre = 'Pepe' // string
@@ -25,6 +29,11 @@ var persona = {
     edad: 34,
     isEstudiante: true
 }
+
+/** Como es JS respecto a los tipos
+ * - debil 
+ * - dinámico
+ */
 
 console.log(saludo, user)
 console.log(nombre, typeof nombre)
