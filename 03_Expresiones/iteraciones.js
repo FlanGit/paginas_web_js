@@ -1,4 +1,3 @@
-
 // Iteraciones
 // for 
 // while 
@@ -27,10 +26,11 @@ iterarInversa()
  * Producto de un número por todos los que le preceden
  * e.g. 5! = 5 * 4 * 3 * 2 * 1
  * e.g. 5! = 5 
- *      5! = 5!* 4 
- * 
- * 
- * * 3 * 2 * 1
+ *      5! = 5! 
+ * * 4 
+ *      5! = 5! * 3
+ *      5! = 5! * 2
+ *      5! = 5! * 1
  * 
  * e.g. 5! = 1 * 2 * 3 * 4 * 5
  * 
@@ -38,37 +38,26 @@ iterarInversa()
  * @return factorial: number 
  * 
  */
-
 function factorial(num) {
-    let factorial = 1
-  
+    let f = 1
     for (let i = 1; i <= num; i++) {
-        factorial = factorial * i
-        
+        f = f * i
     }
-
-    return(console.log(`El factorial de  ${num} es  ${factorial}`))
+    return f
 }
 
-factorial(4)
-
-
-
-function factorialreverse(num) {
-    let factorial = 1
-  
-    for (let i = num; i>0; i--) {
-        factorial = factorial * i
-        
+function factorialInverso(num) {
+    let f = 1
+    for (let i = num; i > 0; i--) {
+        f = f * i
     }
-
-    return(console.log(`El factorial inverso  de  ${num} es  ${factorial}`))
+    return f
 }
 
-    factorialreverse(5)
-// ------------------------------------------------------------
-    // funcion que suma elementos de arreglo y da el total
- 
+console.log(factorial(5)) // 120
+console.log(factorialInverso(5)) // 120
+
+
 function totalizar(aDatos) {
     let num = 0
     for (let i = 0; i < aDatos.length; i++) {
@@ -79,4 +68,15 @@ function totalizar(aDatos) {
 
 let aDatos = [2,3,5,7]
 console.log(`El total es ${totalizar(aDatos)}`)
-    
+
+function leerArray(aDatos) {
+    let r = ''
+     for (let i = 0; i < aDatos.length; i++) {
+        r += `
+        El usuario ${i+1} es ${aDatos[i]}`
+    }
+    return r
+}
+
+let aNombres = ['Pepe', 'Rosa', 'Luis', 'Maria']
+console.log(leerArray(aNombres))
