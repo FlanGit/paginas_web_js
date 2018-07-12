@@ -37,9 +37,9 @@ function capitalizar(cadena) {
 function capitalizar2(cadena) {
     let aTexto = cadena.split(' ')
     for (let i = 0; i < aTexto.length; i++) {
-        let aLetras = aTexto[i].split('')
+        let aLetras = aTexto[i].split('') // separado  por letras
         aLetras[0] = aLetras[0].toUpperCase()
-        aTexto[i] = aLetras.join('')
+        aTexto[i] = aLetras.join('') // sin espacio para hacer palabras y con espacio hace frases completas.
     }
     return aTexto.join(' ')
 }
