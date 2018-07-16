@@ -6,11 +6,14 @@ function despedida() {
 }
 function fondoRojo() {
     console.log(`ROJO`);
-    $('body').css('background', '#c40');
+    $('body').css('background', '#FF0000');
+    $('h1').css('color', '#FFFFFF');
+
 }
 function fondoAzul() {
     console.log(`AZUL`);
-    $('body').css('background', '#08c');
+    $('body').css('background', '#0000FF');
+    $('h1').css('color', '#FFFFFF');
 
 }
 
