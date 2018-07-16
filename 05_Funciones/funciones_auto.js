@@ -1,12 +1,12 @@
-IIEF
+//IIEF
 
 //Funciones autoinvocadas
 
 (function mostrar () {
     console.log('Yo soy esto que ves')
-})()
+})();
 
 
-/* (function () {
+ (function () {
     console.log('Yo soy esto que ves, aunque no tengo nombre')
-})(); */
+})(); 
