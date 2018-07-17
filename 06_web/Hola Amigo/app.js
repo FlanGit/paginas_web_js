@@ -1,12 +1,12 @@
 function app () {
-
+ 
     let domNombre = document.querySelector("#nombre")
     let domBtnSaludar = document.querySelector("#btnSaludar")
     let domBtnBorrar = document.querySelector("#btnBorrar")
     let domOutput = document.querySelector('#output')
 
     domNombre.addEventListener('input', leerDatos)
-/*  domNombre.addEventListener('change', detectarChange ) */ 
+  domNombre.addEventListener('change', detectarChange ) 
     domBtnSaludar.addEventListener('click', saludar)
     domBtnBorrar.addEventListener('click', borrar)
 
@@ -16,11 +16,10 @@ function app () {
         domOutput.innerHTML=`Hola, <strong>${domNombre.value}</strong>`
 
     }
-/*  function detectarChange(){
+    function detectarChange(){
     console.log('Changedetectado', domNombre.value)
 
-    } */
-
+    } 
     function saludar() {
         console.log('Hola amigo')
     }
