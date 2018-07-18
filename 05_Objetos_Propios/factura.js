@@ -1,17 +1,17 @@
-let factura = {
-    empresa : {
-        nombre : '',
+let factura = {       // Objeto  factura contiene 
+    empresa : {                 // objeto empresa
+        nombre : 'nombre empresa factura',
         direccion : '',
         telefono : '',
         nif : ''
     }, 
-    cliente : {
-        nombre : '',
+    cliente : {                // objeto cliente  
+        nombre : 'nombre cliente factura',
         direccion : '',
         telefono : '',
         nif : ''
     }, 
-    elementos : [
+    elementos : [              // array elementos
         {descripcion : '',
         precio: '',
         cantidad: ''}, 
@@ -22,9 +22,9 @@ let factura = {
         precio: '',
         cantidad: ''}, 
     ],
-    importeTotal : '',
-    tipoIVA: '',
-    formaPago: ''
+    importeTotal : '',         // importe total
+    tipoIVA: '',               // tipoIVA
+    formaPago: ''              // formaPago
 }
 factura.calculaImporteTotal = function() {
     // actualice el valor de la propiedad correspondiente
@@ -37,13 +37,13 @@ factura.mostrar = function() {
 
 let factura1 = {
     empresa : {
-        nombre : 'Boracay Ediciones',
+        nombre : 'Boracay Ediciones factura1',
         direccion : 'c/ Pez',
         telefono : '587 349 785',
         nif : 'Z-345123876'
     }, 
     cliente : {
-        nombre : 'Libreria Tuatalug',
+        nombre : 'Libreria Tuatalug factura1',
         direccion : 'c/ Tortuga',
         telefono : '543 987 654',
         nif : 'K-434344343'
@@ -97,7 +97,13 @@ factura1.pintaDatos = function (oDatos = this) {
     }
 }
 
-// factura1.mostrar()
+console.log("-----------0-----------");
+factura.mostrar()
+console.log('-----------1-----------');
+console.log(factura);/*
+console.log('-----------2-----------');
 console.log(factura1);
+console.log('-----------3-----------');
+factura1.mostrar()
 
-
+*/
