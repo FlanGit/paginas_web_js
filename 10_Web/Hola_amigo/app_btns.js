@@ -7,25 +7,28 @@ function app () {
     let domOutput = document.querySelector('#output')
 
     // Defino los manejadores de eventos de algunos nodos
-    domBtnSaludar.addEventListener('click', saludar)
+    domBtnSaludar.addEventListener('click', mostrar)
     domBtnBorrar.addEventListener('click', borrar)
-
-    function limpiar(){
-        domOutput.innerHTML = '';
-    }
-
-    function saludar() {
+    
+/*     function mostrar() {
+        domOutput.innerHTML = ''
         let valorNombre = domNombre.value
         if (!!valorNombre) {
             domOutput.innerHTML = `Hola, <strong>${valorNombre}</strong>`
         }
+    } */
+
+    function mostrar() {
+        domOutput.innerHTML = ''
+        if (!!domNombre.value) {
+            domOutput.innerHTML = `Hola, <strong>${domNombre.value}</strong>`
+        } 
     }
 
     function borrar () {
-        domNombre.value ='';
-        limpiar()
-
+        domNombre.value = ''
+        mostrar()
     }
-
 }
 document.addEventListener('DOMContentLoaded', app)
+
