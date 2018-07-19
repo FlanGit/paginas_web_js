@@ -26,3 +26,8 @@ table {
 th {
     width: calc(100%/3)
 }
+
+.tabla-title {
+    background-color: brown;
+    color: bisque
+}

@@ -14,31 +14,48 @@ export class FacturaHtml {
             document.querySelector("#cliente-telefono"),
             document.querySelector("#cliente-nif")
         )
+        this.elementosTabla = document.querySelector("#elementos-tabla")
         this.importeTotal = document.querySelector("#importeTotal")
         this.tipoIVA = document.querySelector("#tipoIVA")
         this.formaPago = document.querySelector("#formaPago")
-        this.tabla = `                
-            <table>
-                <tr>
-                    <th>Descripcion</th>
-                    <th>Precio</th>
-                    <th>Cantidad</th>
-                </tr>
-            </table>`
     }
 
-    pintarDatos() {
-        this.empresa.nombre.innerHTML = '******'
-        this.empresa.direccion.innerHTML = '******' 
-        this.empresa.telefono.innerHTML = '******'
-        this.empresa.nif.innerHTML = '******'
-        this.cliente.nombre.innerHTML = '******'
-        this.cliente.direccion.innerHTML = '******' 
-        this.cliente.telefono.innerHTML = '******'
-        this.cliente.nif.innerHTML = '******'
-        this.importeTotal.innerHTML = '******'
-        this.tipoIVA.innerHTML = '******'
-        this.formaPago.innerHTML = '******'
+    pintarDatos(facturaDatos) {
+        console.dir(facturaDatos)
+        this.empresa.nombre.innerHTML = facturaDatos.empresa.nombre
+        this.empresa.direccion.innerHTML = facturaDatos.empresa.direccion 
+        this.empresa.telefono.innerHTML = facturaDatos.empresa.telefono
+        this.empresa.nif.innerHTML = facturaDatos.empresa.nif
+        this.cliente.nombre.innerHTML = facturaDatos.cliente.nombre
+        this.cliente.direccion.innerHTML = facturaDatos.cliente.direccion
+        this.cliente.telefono.innerHTML = facturaDatos.cliente.telefono
+        this.cliente.nif.innerHTML = facturaDatos.cliente.nif
+        this.importeTotal.innerHTML = facturaDatos.importeTotal
+        this.tipoIVA.innerHTML = facturaDatos.tipoIVA
+        this.formaPago.innerHTML = facturaDatos.formaPago
+        this.elementosTabla.innerHTML = 
+                this.crearTabla(facturaDatos.elementos)
+    }
+
+    crearTabla(elementosDatos) {
+        console.log(elementosDatos)
+        let tabla =
+            `<tr class="tabla-title">
+                <th>DescriTcion</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+            </tr>`
+
+        elementosDatos.forEach(item => {
+            tabla +=
+                `<tr>
+                <td>${item.descripcion}</td>
+                <td>${item.precio}</td>
+                <td>${item.cantidad}</td>
+            </tr>`
+        });
+
+        return tabla
     }
 
 }

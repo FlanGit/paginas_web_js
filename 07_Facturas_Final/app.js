@@ -29,7 +29,7 @@ function crearFactura1() {
     
     factura1.elementos.push(
         new Elemento (
-            'La Isla del Tesora',30,10)
+            'La Isla del Tesoro',30,10)
     )
 
     factura1.elementos.push(
@@ -37,10 +37,13 @@ function crearFactura1() {
     )
 
     factura1.elementos.push(
-        new Elemento ('El Señor de loas Anillos', 50, 24)
+        new Elemento ('El Señor de los Anillos', 50, 24)
     )
 
-    factura1.mostrar()
+    //factura1.mostrar()
+    factura1.calculaImporteTotal()
+    new FacturaHtml().pintarDatos(factura1)
+
 }
 
 function crearFactura2() {
@@ -68,17 +71,19 @@ function crearFactura2() {
         new Elemento ('El Hobbit', 50, 24)
     )
 
-    factura1.mostrar()    
+    //factura1.mostrar()    
     //console.log(factura1)
+    factura1.calculaImporteTotal()
+    new FacturaHtml().pintarDatos(factura1)
 }
 
-//crearFactura1()
-//crearFactura2()
+
+
 
 function main() {
-    /* let x = new FacturaHtml()
-    x.pintarDatos() */
-    new FacturaHtml().pintarDatos()
+    //crearFactura1()
+    crearFactura2()
 }
 
 document.addEventListener('DOMContentLoaded', main)
+
