@@ -28,3 +28,6 @@ function cosaRara() {
 //cosaRara()
 
 new cosaRara()
+
+// THIS es quien yo decida haciendo  esto.
+//call() y apply()
