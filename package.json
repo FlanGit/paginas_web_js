@@ -10,7 +10,10 @@
     "type": "git",
     "url": "git+https://github.com/FlanGit/paginas_web_js.git"
   },
-  "keywords": ["Javascript", "ECMAScript"],
+  "keywords": [
+    "Javascript",
+    "ECMAScript"
+  ],
   "author": "Francisco Frias",
   "license": "ISC",
   "bugs": {
