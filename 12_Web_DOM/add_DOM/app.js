@@ -16,7 +16,7 @@ class App {
     addInfoModerno() {
         document.body.innerHTML += `
         <div class="aviso">
-            <p>Este sitio utiliza cookies</p>
+            <p>Este sitio utiliza cookies addInfoModerno</p>
             <button type="button" id="btnAceptar">Aceptar</button>
         </div>`
 
