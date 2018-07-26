@@ -1,3 +1,4 @@
+// ---------ejemplo de localStorage--------------------------------------------------
 if (localStorage.numVisitas) {
     // Existe numVisitas en localStorage
     localStorage.numVisitas++
@@ -5,8 +6,19 @@ if (localStorage.numVisitas) {
     // No existe numVisitas en localStorage
     localStorage.numVisitas = 1
 } 
-console.log('Visita número', localStorage.numVisitas)
+console.log(' localStorage Visitas número', localStorage.numVisitas)
 
+// ------------ejemplo de sessionStorage-----------------------------------------------
+if (sessionStorage.numVisitas) {
+    // Existe numVisitas en localStorage
+    sessionStorage.numVisitas++
+} else {
+    // No existe numVisitas en localStorage
+    sessionStorage.numVisitas = 1
+} 
+console.log(' sessionStorage Visitas número', sessionStorage.numVisitas)
+
+// -----------------------------------------------------------
 // Como sería SI FUERA SINCRONO
 // data = navigator.geolocation.getCurrentPosition()
 // console.log(data)
