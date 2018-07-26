@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>GMaps.js &mdash; Geolocation</title>
+  <script type="text/javascript" src="zepto.min.js"></script>
+  <script type="text/javascript" src="apisensor.js"></script>
+  <script type="text/javascript" src="gmaps.js"></script>
+  <link rel="stylesheet" type="text/css" href="mypath.css" />
+  <script type="text/javascript">
+    var map, lat, lng;
+    var arrlat = new Array() ;
+    var arrlng = new Array() ;
+    var ii = 0;
+    var ubicaciones;
+
+  // localStorage.removeItem("ubicaciones");
+
+
+    $(function(){
+
+    var primlat = 0; 
+    var primlng =0;
+
+      function cargaUbica() {
+        if (localStorage.ubicaciones) {
+           try {
+                ubicaciones = JSON.parse(localStorage.ubicaciones);
+           } 
+           catch (e) {
+                       ubicaciones = new Array();
+           }
+        } 
+        else  
+        {
+                
+                ubicaciones = new Array();
+                localStorage.ubicaciones = localStorage.ubicaciones || '[0],[0]';
+                
+        }
+      }
+
+      function guardaUbica() {
+          console.log(ubicaciones);
+          localStorage.ubicaciones = JSON.stringify(ubicaciones);
+       }
+
+
+      function muestraUbica() {
+        var punto, punto_anterior;
+        for (var i = 0; i < ubicaciones.length; i++) 
+        {
+          if (ubicaciones[i]) 
+          {
+            punto = ubicaciones[i];
+            map.addMarker({ lat: punto[0], lng: punto[1] });
+            if (punto_anterior) 
+            {
+              map.drawRoute({ 
+              origin: [punto_anterior[0], punto_anterior[1]],
+              destination: [punto[0], punto[1]],
+              travelMode: 'driving',
+              strokeColor: '#990066',                                                                
+              strokeOpacity: 0.5,
+              strokeWeight: 5
+              });
+            }
+            punto_anterior = punto;
+          }
+        }
+        
+        if (punto) 
+        {
+          lat = punto[0];
+          lng = punto[1];
+        }
+      }
+
+
+      function enlazarMarcador(e){
+
+        // muestra ruta entre marcas anteriores y actuales
+        map.drawRoute({
+          origin: [lat, lng],  // origen en coordenadas anteriores
+          // destino en coordenadas del click o toque actual
+          destination: [e.latLng.lat(), e.latLng.lng()],
+          travelMode: 'driving',
+          strokeColor: '#000000',
+          strokeOpacity: 0.6,
+          strokeWeight: 5
+        });
+           
+
+           ubicaciones.push([e.latLng.lat(),e.latLng.lng() ]); // guarda coords para marca siguiente
+
+          lat = e.latLng.lat();
+          lng = e.latLng.lng();
+
+        map.addMarker({ lat: lat, lng: lng});  // pone marcador en mapa
+      };
+
+     $(window).bind("beforeunload", function() { guardaUbica(); }); 
+
+
+      function geolocalizar(){
+        GMaps.geolocate({
+          success: function(position){
+            cargaUbica();    
+            if (ubicaciones.length > 0) 
+                 {
+                   lat = ubicaciones[0][0]; 
+                   lng = ubicaciones[0][1];
+                   primlat  = lat;
+                   primlng  = lng;
+                 } 
+            else {
+                   lat = position.coords.latitude; // guarda coords en lat y lng
+                   lng = position.coords.longitude;
+                   ubicaciones.push ([lat, lng]);
+                   
+                 }
+   
+            map = new GMaps({  // muestra mapa centrado en coords [lat, lng]
+              el: '#map',
+              lat: lat,
+              lng: lng,
+              click: enlazarMarcador,
+              tap: enlazarMarcador
+            });
+            map.addMarker({ lat: lat, lng: lng});  // marcador en [lat, lng]
+
+            muestraUbica();
+
+          },
+          error: function(error) { alert('Geolocalización falla: '+error.message); },
+          not_supported: function(){ alert("Su navegador no soporta geolocalización"); },
+        });
+      };
+
+      geolocalizar();
+
+      $("#inicializar").on('click',  function() 
+      { 
+          var respuesta = confirm("¿Quiere Borrar la Ruta Trazada e Iniciar una Nueva ? ")
+          if (respuesta === true) {
+
+             localStorage.removeItem("ubicaciones");
+              geolocalizar();
+
+          }
+      });
+
+
+      $("#compactar").on('click',  function() 
+      { 
+        var respuesta = confirm("¿Quiere solo la primera y ultima ubicacion  ");
+        if (respuesta === true) 
+        {
+          if (ubicaciones.length > 2) 
+          {          
+            localStorage.removeItem("ubicaciones");
+            var ultlat = lat;
+            var ultlng = lng;
+            ubicaciones = new Array();
+            localStorage.ubicaciones = JSON.stringify(ubicaciones);
+            ubicaciones.push ([primlat, primlng]);
+            map = new GMaps
+            ({  // muestra mapa centrado en coords [lat, lng]
+              el: '#map',
+              lat: primlat,
+              lng: primlng,
+              click: enlazarMarcador,
+              tap: enlazarMarcador
+            });
+            map.addMarker({ lat: primlat, lng: primlng});  // marcador en [lat, lng]
+            // muestra ruta entre marcas anteriores y actuales
+            ubicaciones.push ([ultlat, ultlng]);
+            map.addMarker({ lat: ultlat, lng: ultlng});  // marcador en [lat, lng]
+            muestraUbica();
+          }
+          else
+          {
+            alert("No se Puede Compactar la Ruta Trazada, se requiere Minimo 3 Puntos");
+          };
+        };
+      });        
+    });
+   
+  </script>
+</head>
+<body>
+  <h1>Geolocalización</h1>
+
+  <button  type="button"  id="inicializar">Inicializar</button>
+  <button  type="button"  id="compactar">Compactar</button>
+
+  <div id="map"></div>
+</body>
+</html>
