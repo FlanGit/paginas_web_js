@@ -4,9 +4,8 @@ const REYES = new Array('Fernando', 'Isabel', 'Juana', 'Carlos', 'Felipe',
 export class ListaReyes {
     constructor () {
         this.aAcertados = []
-        this.listaReyes = REYES
-        this.listaReyesMay = 
-            this.listaReyes.map(item => item.toUpperCase())
+        this.aReyes = REYES
+        this.aReyesMay = this.aReyes.map(item => item.toUpperCase())
 
         this.domBoton = document.querySelector("#btnAdd")
         this.domMensaje = document.querySelector("#respuesta");
@@ -26,7 +25,7 @@ export class ListaReyes {
         
         // posición del valor en el array
         // o -1 si no está
-        let pos = this.listaReyesMay.indexOf(cad.toUpperCase())
+        let pos = this.aReyesMay.indexOf(cad.toUpperCase())
         if (pos >= 0) {
             // comprobamos si el nombre de rey 
             // ya esta en la lista
@@ -42,12 +41,12 @@ export class ListaReyes {
 
     pintaItem(numItem) {
         /* var elemento = document.createElement("li");
-        var texto = document.createTextNode(this.listaReyes[numItem]);
+        var texto = document.createTextNode(this.aReyes[numItem]);
         elemento.appendChild(texto);
         var lista = document.getElementById("lista");
         lista.appendChild(elemento); */
         this.domLista.innerHTML += 
-            `<li>${this.listaReyes[numItem]}</li>`
+            `<li>${this.aReyes[numItem]}</li>`
         
     }
 }
