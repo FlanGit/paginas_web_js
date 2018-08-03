@@ -94,8 +94,10 @@ function probar () {
     console.log(`Si tu dia es ${dia}`, despertador(dia)) // 12:00
 }
 
+probar ()
 
 // Ejemplo de if
+let a = 45
 
 if (a == 26 || a == 27  || a == 65  ) {
     // ...
@@ -129,6 +131,6 @@ switch (a) {
 // más código
 
 
-let a = 'Pepe'
+ a = 'Pepe'
 let saludoOld = 'Hola ' + a
 let saludo = `Hola ${a}`
