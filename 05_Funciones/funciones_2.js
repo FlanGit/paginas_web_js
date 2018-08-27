@@ -2,7 +2,7 @@
 function miFuncion(x) {
     console.log(x)
 }
-function calcular(x) {
+function duplicar(x) {
     return 2*x
 }
 
@@ -13,7 +13,7 @@ let x = 23
 miFuncion(23)
 
 // Asignando el resultado de invocar ...
-let z = calcular(12)
+let z = duplicar(12)
 
 // OTRA FORMA DE CREAR FUNCIONES EN JS:
 // por asignacion
