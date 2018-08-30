@@ -15,11 +15,11 @@ function otra(x) {
     let f = x()
 }
 
-let o = function () {
+let oo = function () {
     let o1 = function () {}
 }
 
-otra(o)
+otra(oo)
 otra(function () {})
 
 // Formas de crear funciones
