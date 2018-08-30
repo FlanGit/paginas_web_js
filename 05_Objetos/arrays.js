@@ -4,15 +4,15 @@ let oDatos = {}
 let aDatos = [1,2]
 // aDatos = new Array()
 
-/* console.log(aDatos.length)
+ console.log(aDatos.length)
 aDatos[10] = 4
 console.log(aDatos)
 console.log(typeof aDatos[7])
 aDatos[7] = 'Pepe'
-aDatos[5] = {} */
+aDatos[5] = {} 
 
 console.log(aDatos + [3,4])
-console.log(aDatos.concat([3,4]))
+console.log(aDatos.concat([3,4]),"hola")
 
 let aNombres = ['Pepe', 'Luis', 'Arancha', 'Rosa', 'Maria']
 // aNombresOriginal = aNombres
@@ -29,6 +29,7 @@ aClon = aNombres.slice(0,aNombres.length)
 // aClon.push('Juan')
 aClon.push('Juan', 'Rosa')
 console.log(aClon);
+console.log("----------aClon--------");
 
 //let aElegidos = aNombres.splice(1,2)
 //let aElegidos = aNombres.splice(1,2,'Carlos', 'Juan', 'Antonio')
@@ -49,3 +50,6 @@ aNombres = ['Pepe', 'Luis', 'Arancha', 'Rosa', 'Maria']
 
 aNombres.push(...['Lorenzo', 'Herminia'])
 console.log(aNombres);
+
+aNotas.push(...['Lorenzo', 'Herminia'])
+console.log(aNotas);
