@@ -35,15 +35,21 @@ function capitalizar(cadena) {
 
 
 function capitalizar2(cadena) {
-    let aTexto = cadena.split(' ')
+    let aTexto = cadena.split(' ')        
+    console.log(aTexto)
+
     for (let i = 0; i < aTexto.length; i++) {
         let aLetras = aTexto[i].split('') // separado  por letras
+        console.log(aLetras)
         aLetras[0] = aLetras[0].toUpperCase()
+        console.log(aLetras)
         aTexto[i] = aLetras.join('') // sin espacio para hacer palabras y con espacio hace frases completas.
+        console.log(aTexto[i])
+
     }
     return aTexto.join(' ')
 }
 
-console.log(capitalizar('Un anillo para todos'));
+console.log(capitalizar2('un anillo para todos'));
 
 console.log(String.fromCharCode(13465))
