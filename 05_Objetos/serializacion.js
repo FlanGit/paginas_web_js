@@ -9,11 +9,13 @@ let oPersona = {
 oPersona.saludar()
 
 let aDatos = [2,3,4,5]
-
+console.log((oPersona));
 console.log(typeof JSON.stringify(oPersona));
+console.log('Tengo un '+ typeof JSON.stringify(oPersona) + JSON.stringify(oPersona));
 console.log('Tengo un string '+ JSON.stringify(oPersona));
 
 console.log(typeof JSON.stringify(aDatos));
+console.log('Tengo un '+ typeof JSON.stringify(aDatos) + JSON.stringify(aDatos));
 console.log('Tengo un string '+ JSON.stringify(aDatos));
 
 let datosString = JSON.stringify(oPersona)
