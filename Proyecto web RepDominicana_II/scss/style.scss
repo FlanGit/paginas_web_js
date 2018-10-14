@@ -1,0 +1,284 @@
+@font-face { font-family: 'Perma';
+    src: url('../assets/PermanentMarker-Regular.ttf')};
+* {
+    box-sizing: border-box;
+}
+
+$color_main: #6CDFCE; 
+$color_back: rgb(9, 33, 253);
+
+
+body, section, h1, h2, figure, nav ul, nav li{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    header{
+        background: linear-gradient(to bottom, blue, white, red);
+/*         background-color: $color_main; 
+ */        color: $color_back;
+
+        nav{
+            width: 100%;   
+            align-items: center;
+            padding-left: 95%;
+            padding-top: 0.5rem;
+        }
+    
+        section{  
+    
+            display: flex;
+    
+            .divImg{
+                width: 251px;
+                display: inline-block;
+                padding-left: 1rem;
+            }  
+            img{
+                width: 100%; 
+                max-width: 251px;
+            }
+            h1{
+
+            /* color: $color_back; */
+            font-family: Perma, cursive;
+            font-size: 1.8rem;
+            text-align: center;
+            padding-top: 2px;
+            }    
+        }  
+    }    
+  
+    nav.menu-mobile {
+
+        background-color: $color_main;
+        color: $color_back; 
+        a {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            padding-left: 1rem;
+            display: block;
+
+            &:hover {      
+                background-color: $color_back;
+                color: $color_main;
+            }
+        }  
+    }
+
+    nav.hide-menu{
+        display: none;
+    }
+   
+    main {
+        section {    
+            h2{
+                margin-left: 1rem;
+                padding-top : 0.5rem; 
+                padding-bottom : 0.5rem; 
+            }
+
+            .div_flex{
+                display: flex;
+                .mainDivImg{
+                    width: 100%;
+                    display: inline-block;
+                    padding: 0;
+                }   
+                img{
+                    width: 100%; 
+                }
+            }
+            #geografia img{display: flex;
+                    max-width: 642px; 
+                }
+          
+            blockquote{
+                margin: 1rem ;
+                margin-top: 0 ;
+                p{
+                    font-family:  Arial, Helvetica, sans-serif, cursive;
+                    font-size: 1rem;
+                    margin: 1rem;
+                    margin-right: 1rem;
+                }
+            }
+            
+            p{
+                margin-left: 0.5rem;
+            }
+            
+            
+            th, td {
+                padding: 1px auto;                 
+
+            }
+
+            th {
+                background-color: rgb(255, 78, 78);
+                color: rgb(255, 255, 255);
+                border: 3px solid rgb(97, 49, 124);
+
+            }
+
+            td {
+                background-color: rgb(182, 100, 0)
+            }
+
+            table.batallas{
+                border-spacing: 0;
+                empty-cells: hide;            
+                font-size: 1rem;
+
+            }
+        
+            table.batallas tr:nth-child(odd) td{
+                background-color: rgb(255, 78, 78);
+                border: 3px solid rgb(97, 49, 124);
+                
+                
+            }
+            
+            table.batallas tr:nth-child(even) td{
+                background-color: rgb(2, 245, 42);
+                border: 3px solid rgb(97, 49, 124);
+            }
+        }
+
+        p.mailto {
+            font-family: Arial, Helvetica, sans-serif, cursive;
+            font-size: 1rem;
+            margin-left: 1rem;
+            padding: 0;
+        }
+
+    }
+
+    aside{
+        background-color: burlywood;
+        margin: 1rem;
+        font-size: 1.3rem;
+        padding-top: 1rem;        
+        padding-left: 1rem;
+        ul {
+            list-style: none;
+            text-decoration: none;
+            li{
+                padding-top: 0.5rem;        
+            }
+        }
+
+    }
+
+    details{
+        margin: 1rem;
+        font-size: 1.3rem;
+    }
+
+    footer {        
+        border-top: 2px solid;
+        margin-top: 1rem;
+        padding-bottom: 1rem;
+        padding-top: 1rem;        
+        text-align: center;
+        background-color: #CCCCCC;
+        address{
+            margin: 0.4rem;
+            font-size: 1.3rem;
+        }
+        p{
+            margin: 0;
+        }
+    }
+     
+}
+
+//- ****************************************************************** //
+@media screen and (min-width: 370px) {
+    body {
+        header{
+    
+            section h1 { padding: 0;
+                font-size: 2.5rem;
+                padding-left: 1.5rem;
+               /*  color: $color_back; */
+                padding-top: 2.3rem;
+            } 
+        }
+  
+        .main_aside_flex {
+        
+            display: flex;
+            
+            main {
+                padding-left: 1rem;
+                padding-right: 1rem;
+                flex: 1 1 85%;
+                background-color: rgb(148, 122, 93);
+
+                }   
+            aside {
+                padding-left: 1rem;
+                padding-right: 1rem;
+                flex: 1 1 15%;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+    
+   
+@media screen and (min-width:790px ) {
+
+    body{ 
+
+        header{
+            
+            section h1{ padding: 0;
+                font-size: 4.5rem;
+                padding-left: 1.5rem;
+             /*    color: blueviolet; */
+                padding-top: 1.3rem;
+            } 
+
+
+
+
+            nav{
+                display:none;
+            }
+        }
+
+        nav.menu-desk{
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 7rem;
+        
+            ul{
+                display: flex;
+                list-style: none;
+
+                li{
+                    a {
+                        text-decoration: none;
+                        padding: 0.5rem  1rem;
+                        display: block;
+                        &:hover {
+                            background-color: rgb(148, 122, 93) ;
+                            color: rgb(255, 255, 255);
+                            border-radius: 1rem;
+                        }
+                    }  
+                }
+            }
+
+        }
+        .menu-mobile{
+            display:none;
+        }
+        
+    }
+}

@@ -1,0 +1,220 @@
+@font-face {
+  font-family: "Perma";
+  src: url("../assets/PermanentMarker-Regular.ttf");
+}
+* {
+  box-sizing: border-box;
+}
+
+body, section, h1, h2, figure, nav ul, nav li {
+  margin: 0;
+  padding: 0;
+}
+
+body header {
+  background: linear-gradient(to bottom, blue, white, red);
+  /*         background-color: $color_main; 
+   */
+  color: #0921fd;
+}
+body header nav {
+  width: 100%;
+  align-items: center;
+  padding-left: 95%;
+  padding-top: 0.5rem;
+}
+body header section {
+  display: flex;
+}
+body header section .divImg {
+  width: 251px;
+  display: inline-block;
+  padding-left: 1rem;
+}
+body header section img {
+  width: 100%;
+  max-width: 251px;
+}
+body header section h1 {
+  /* color: $color_back; */
+  font-family: Perma, cursive;
+  font-size: 1.8rem;
+  text-align: center;
+  padding-top: 2px;
+}
+body nav.menu-mobile {
+  background-color: #6CDFCE;
+  color: #0921fd;
+}
+body nav.menu-mobile a {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  display: block;
+}
+body nav.menu-mobile a:hover {
+  background-color: #0921fd;
+  color: #6CDFCE;
+}
+body nav.hide-menu {
+  display: none;
+}
+body main section h2 {
+  margin-left: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+body main section .div_flex {
+  display: flex;
+}
+body main section .div_flex .mainDivImg {
+  width: 100%;
+  display: inline-block;
+  padding: 0;
+}
+body main section .div_flex img {
+  width: 100%;
+}
+body main section #geografia img {
+  display: flex;
+  max-width: 642px;
+}
+body main section blockquote {
+  margin: 1rem;
+  margin-top: 0;
+}
+body main section blockquote p {
+  font-family: Arial, Helvetica, sans-serif, cursive;
+  font-size: 1rem;
+  margin: 1rem;
+  margin-right: 1rem;
+}
+body main section p {
+  margin-left: 0.5rem;
+}
+body main section th, body main section td {
+  padding: 1px auto;
+}
+body main section th {
+  background-color: #ff4e4e;
+  color: white;
+  border: 3px solid #61317c;
+}
+body main section td {
+  background-color: #b66400;
+}
+body main section table.batallas {
+  border-spacing: 0;
+  empty-cells: hide;
+  font-size: 1rem;
+}
+body main section table.batallas tr:nth-child(odd) td {
+  background-color: #ff4e4e;
+  border: 3px solid #61317c;
+}
+body main section table.batallas tr:nth-child(even) td {
+  background-color: #02f52a;
+  border: 3px solid #61317c;
+}
+body main p.mailto {
+  font-family: Arial, Helvetica, sans-serif, cursive;
+  font-size: 1rem;
+  margin-left: 1rem;
+  padding: 0;
+}
+body aside {
+  background-color: burlywood;
+  margin: 1rem;
+  font-size: 1.3rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+}
+body aside ul {
+  list-style: none;
+  text-decoration: none;
+}
+body aside ul li {
+  padding-top: 0.5rem;
+}
+body details {
+  margin: 1rem;
+  font-size: 1.3rem;
+}
+body footer {
+  border-top: 2px solid;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  text-align: center;
+  background-color: #CCCCCC;
+}
+body footer address {
+  margin: 0.4rem;
+  font-size: 1.3rem;
+}
+body footer p {
+  margin: 0;
+}
+
+@media screen and (min-width: 370px) {
+  body header section h1 {
+    padding: 0;
+    font-size: 2.5rem;
+    padding-left: 1.5rem;
+    /*  color: $color_back; */
+    padding-top: 2.3rem;
+  }
+  body .main_aside_flex {
+    display: flex;
+  }
+  body .main_aside_flex main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    flex: 1 1 85%;
+    background-color: #947a5d;
+  }
+  body .main_aside_flex aside {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    flex: 1 1 15%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 790px) {
+  body header section h1 {
+    padding: 0;
+    font-size: 4.5rem;
+    padding-left: 1.5rem;
+    /*    color: blueviolet; */
+    padding-top: 1.3rem;
+  }
+  body header nav {
+    display: none;
+  }
+  body nav.menu-desk {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 7rem;
+  }
+  body nav.menu-desk ul {
+    display: flex;
+    list-style: none;
+  }
+  body nav.menu-desk ul li a {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+  }
+  body nav.menu-desk ul li a:hover {
+    background-color: #947a5d;
+    color: white;
+    border-radius: 1rem;
+  }
+  body .menu-mobile {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=css/style.css.map */

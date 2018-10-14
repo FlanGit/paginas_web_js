@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>        
+ /*
+sentido aguja del reloj empieza por arriba*/
+th, td {
+    padding: 0.8rem 2rem; 
+}
+
+th {
+    background-color: maroon;
+    color: bisque
+
+}
+
+td {
+    background-color: bisque
+}
+
+table.batallas td:after {
+    content: "%"
+}
+
+table.batallas{
+    border-spacing: 0.25rem;
+    empty-cells: hide;
+}
+
+
+/* LOS IMPARES*/
+article table.batallas tr:nth-child(odd) td{
+    background-color: aqua;
+/*     border: 3px solid rgb(255, 0, 0);
+ */    
+    
+}
+/* LOS PARES*/
+article table.batallas tr:nth-child(even) td{
+    background-color: rgb(245, 136, 2);
+/*     border: 3px solid rgb(255, 0, 0);
+ */}
+    </style>
+</head>
+
+        <table class="batallas" >
+                <tr>
+                    <th colspan="1" rowspan="2"></th>
+                    <th colspan="3">BATALLAS POR LA INDEPENDENCIA</th>
+                </tr>
+                <tr>
+                    <th>Batalla</th>
+                    <th>Fecha</th>
+                    <th>Lugar</th>
+                </tr>
+                <tr>
+                    <th rowspan="6">Primera Campaña</th>
+    
+                    <td>Fuente del Rodeo</td>
+                    <td>13 de marzo de 1844</td>
+                    <td>Bahoruco</td>
+                </tr>
+                <tr>
+                    <td>Cabeza de Las Marías y Las Hicoteas</td>
+                    <td>18 de marzo de 1844</td>
+                    <td>Neiba Azua</td>
+                </tr>
+                <tr>
+                    <td>Batalla del 19 de marzo</td>
+                    <td>19 de marzo de 1844</td>
+                    <td>Azua</td>
+                </tr>
+                <tr>
+                    <td>Batalla del 30 de marzo</td>
+                    <td>30 de marzo de 1844</td>
+                    <td>Santiago</td>
+                </tr>
+                <tr>
+                    <td>El Memiso</td>
+                    <td>13 de abril de 1844</td>
+                    <td>Azua  </td>
+                </tr>
+                <tr>
+                    <td>Puerto Tortuguero </td>
+                    <td>15 de abril de 1844</td>
+                    <td>Azua  </td>
+                </tr>
+    
+    
+                <tr>
+                    <th rowspan="3">Segunda Campaña</th>
+    
+                    <td>Cachimán</td>
+                    <td>17 de junio de 1845  </td>
+                    <td>Haití</td>
+                </tr>
+                <tr>
+                    <td>La Estrelleta</td>
+                    <td>17 de septiembre de 1845 </td>
+                    <td>Elías Piña</td>
+                </tr>
+                <tr>
+                    <td>Beller</td>
+                    <td>27 de octubre de 1845</td>
+                    <td>Dajabón</td>
+                </tr>
+            </table>
+
+</body>
+</html>
