@@ -64,16 +64,63 @@ section:nth-of-type(2n) {
 .divh1nav {
     display: flex;
      background-color: brown;
-    flex-direction: column;
-    flex-wrap: wrap;
-  justify-content: center;
+     flex-direction: column;
+    flex-wrap: wrap; 
+     justify-content: center;
      align-items: flex-center;
     align-content: center;  
    /*  height: 80vh; */
-
+width: 90%;
 }
 .relative {
     position: relative;
+    bottom: -3rem; 
+   text-align: right;
 
- bottom: -3rem; 
-  }
+}
+
+body main section th, body main section td {
+    padding: 1px auto;
+}
+
+body main section th {
+    background-color: #ff4e4e;
+    color: white;
+    border: 3px solid #61317c;
+}
+
+body main section td {
+    background-color: #b66400;
+}
+
+body main section table.batallas {
+    border-spacing: 0;
+    empty-cells: hide;
+    font-size: 1rem;
+}
+
+body main section table.batallas tr:nth-child(odd) td {
+    background-color: #ff4e4e;
+    border: 3px solid #61317c;
+}
+  body main section table.batallas tr:nth-child(even) td {
+    background-color: #02f52a;
+    border: 3px solid #61317c;
+}
+body main section .div_flex .mainDivImg {
+    width: 100%;
+    display: inline-block;
+    padding: 0;
+}
+
+body main section .div_flex {
+    display: flex;
+}
+body main section .div_flex .mainDivImg {
+    width: 100%;
+    display: inline-block;
+    padding: 0;
+}
+body main section .div_flex img {
+    width: 100%;
+}
