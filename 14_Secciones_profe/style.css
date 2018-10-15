@@ -10,6 +10,7 @@ body {
 h1, nav {
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 header {
@@ -25,7 +26,7 @@ header {
 }
 
 .bajo-header {
-    padding-top: 3rem;
+    padding-top: 10rem;
 }
 
 nav li {
@@ -50,10 +51,29 @@ nav a {
 }
 
 section:nth-of-type(2n) {
-    background-color: lightcoral;
+    background-color: rgb(177, 199, 233);
 }
 
 .content_wrapper {
     margin: 0 10%;
     padding: 1rem;
 }
+
+
+
+.divh1nav {
+    display: flex;
+     background-color: brown;
+    flex-direction: column;
+    flex-wrap: wrap;
+  justify-content: center;
+     align-items: flex-center;
+    align-content: center;  
+   /*  height: 80vh; */
+
+}
+.relative {
+    position: relative;
+
+ bottom: -3rem; 
+  }

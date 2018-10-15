@@ -68,7 +68,7 @@ class App {
         this.aOffset = []
         this.aNodosSection.forEach(
             (section) => {
-                this.aOffset.push(section.offsetTop-60)
+                this.aOffset.push(section.offsetTop-168)
             }
         )
         this.aOffset[0] = 0
