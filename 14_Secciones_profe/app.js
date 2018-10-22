@@ -68,7 +68,7 @@ class App {
         this.aOffset = []
         this.aNodosSection.forEach(
             (section) => {
-                this.aOffset.push(section.offsetTop-178)
+                this.aOffset.push(section.offsetTop-170)
             }
         )
         this.aOffset[0] = 0
@@ -76,4 +76,5 @@ class App {
     }
 }
 
-document.addEventListener('DOMContentLoaded', ()=> new App())
+  window.addEventListener('load', ()=> {new App()})
+//document.addEventListener('DOMContentLoaded', ()=> new App())
