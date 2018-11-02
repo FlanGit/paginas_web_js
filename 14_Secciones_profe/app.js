@@ -8,7 +8,7 @@ class App {
         this.calcularOffsets()
         this.seccionActiva = 0 
 
-        document.addEventListener('scroll', 
+        window.addEventListener('scroll', 
             this.scrollDetect.bind(this) 
         )
 
@@ -38,9 +38,9 @@ class App {
                 if( position >= offset) {index = i}
                 else { return i}
             }) */ 
-        console.log(index)
+       // console.log(index)
         if (this.seccionActiva != index) {
-            console.log('Reescribiendo')
+          //  console.log('Reescribiendo')
             this.aNodosMenu.forEach(
                 (nodoMenu) => {nodoMenu.classList.remove('active')}
             )
@@ -72,7 +72,7 @@ class App {
             }
         )
         this.aOffset[0] = 0
-        console.log(this.aOffset)
+        //console.log(this.aOffset)
     }
 }
 
